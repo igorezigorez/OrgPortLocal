@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrgPort", "OrgPort\OrgPort.csproj", "{AAD92273-15AF-45DD-B1B0-DE046217C328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrgPort.Tests", "OrgPort.Tests\OrgPort.Tests.csproj", "{8887217A-6C0D-4E69-8345-EF20F57BF58A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAD92273-15AF-45DD-B1B0-DE046217C328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD92273-15AF-45DD-B1B0-DE046217C328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD92273-15AF-45DD-B1B0-DE046217C328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD92273-15AF-45DD-B1B0-DE046217C328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8887217A-6C0D-4E69-8345-EF20F57BF58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8887217A-6C0D-4E69-8345-EF20F57BF58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8887217A-6C0D-4E69-8345-EF20F57BF58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8887217A-6C0D-4E69-8345-EF20F57BF58A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
