@@ -40,11 +40,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICommentRepository.cs" />
+    <Compile Include="IImageRepository.cs" />
     <Compile Include="INewsItemRepository.cs" />
     <Compile Include="IQuestionRepository.cs" />
+    <Compile Include="IRepositoryInitializer.cs" />
     <Compile Include="ITagRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrgPort.Model\OrgPort.Model.csproj">
+      <Project>{b0e852df-66ce-4737-8a40-c29165daf9e0}</Project>
+      <Name>OrgPort.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

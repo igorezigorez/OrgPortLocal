@@ -5,22 +5,29 @@ using System.Web;
 
 namespace OrgPort.Model
 {
-    public class NewsItemModel
+    public class NewsItem
     {
+        public NewsItem()
+        {
+            Type = NewsItemType.NewsItem;
+            Date = DateTime.UtcNow;
+            TargetDate = DateTime.UtcNow;
+            Users = new List<UserInfo>();
+            Tags = new List<Tag>();
+        }
+
         public int Id { get; set; }
         public NewsItemType Type { get; set; }
         public string Title { get; set; }
         public string SubTitle { get; set; }
-        public string ImageUrl { get; set; }
-        public string ImageThumbUrl { get; set; }
+        public string ImagePath { get; set; }
+        public string ImageThumbPath { get; set; }
         public string Text { get; set; }
         public int Rating { get; set; }
         public DateTime Date { get; set; }
         public DateTime TargetDate { get; set; }
-        public IEnumerable<UserInformationModel> Users { get; set; }
-        public IEnumerable<UserInformationModel> Tags { get; set; }
-
-//tags
+        public IEnumerable<UserInfo> Users { get; set; }
+        public IEnumerable<Tag> Tags { get; set; }
     }
 
     public enum NewsItemType

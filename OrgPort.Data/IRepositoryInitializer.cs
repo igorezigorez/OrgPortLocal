@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrgPort.DB
+namespace OrgPort.Data
 {
-    public class Class1
+    public interface IRepositoryInitializer
     {
+        void Initialize();
     }
 }

@@ -5,13 +5,9 @@ using System.Web;
 
 namespace OrgPort.Model
 {
-    public class CommentModel
+    public class Tag
     {
-        public int Id { get; set; }
-        public int NewsId { get; set; }
-        public UserInformationModel User { get; set; }
         public string Text { get; set; }
-        public DateTime Date { get; set; }
         public int Rating { get; set; }
     }
 }

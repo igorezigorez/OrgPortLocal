@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrgPort.Data
+namespace OrgPort.DB
 {
-    public class ICommentRepository
+    public interface IUnitOfWork
     {
+        void SaveAllChanges();
     }
 }
