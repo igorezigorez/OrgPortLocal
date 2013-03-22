@@ -9,8 +9,8 @@ namespace OrgPort.Data
 {
     public interface IUserRepository
     {
-        UserInfo GetUser(int id);
+        User GetUser(int id);
         bool ValidateUser(string name, string password);
-        UserInfo CreateUser(UserInfo userInfo);
+        User CreateUser(User userInfo);
     }
 }

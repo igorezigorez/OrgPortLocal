@@ -4,39 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OrgPort.Data;
+using OrgPort.Model;
 
 
 namespace OrgPort.DB.Repository
 {
-    public class NewsItemRepository : INewsItemRepository
+    public class NewsItemRepository : BaseDBRepository, INewsItemRepository
     {
-        void INewsItemRepository.CreateNewsItem(OrgPort.Model.NewsItem newsItem)
+        public NewsItemRepository(IUnitOfWork unitOfWork) : base(unitOfWork) { }
+
+        public void CreateNewsItem(NewsItem newsItem)
         {
-            //using (var context = new DBContext){
-            //}
+            GetDbSet<NewsItem>().Add(newsItem);
+            this.UnitOfWork.SaveAllChanges();
         }
 
-        OrgPort.Model.NewsItem INewsItemRepository.GetNewsItemById(int id)
+        public NewsItem GetNewsItemById(int id)
         {
-            throw new NotImplementedException();
+            return GetDbSet<NewsItem>().Find(id);
         }
 
-        IEnumerable<OrgPort.Model.NewsItem> INewsItemRepository.GetNewsItemList(int count)
+        public IEnumerable<NewsItem> GetNewsItemList(int count)
         {
-            throw new NotImplementedException();
+            return GetDbSet<NewsItem>().Take(count);
         }
 
-        IEnumerable<OrgPort.Model.NewsItem> INewsItemRepository.GetNewsItemListByType(OrgPort.Model.NewsItemType newsItemType, int count)
+        public IEnumerable<NewsItem> GetNewsItemListByType(NewsItemType newsItemType, int count)
         {
-            throw new NotImplementedException();
+            return GetDbSet<NewsItem>().Where(n => n.Type == newsItemType).Take(count);
         }
 
-        IEnumerable<OrgPort.Model.NewsItem> INewsItemRepository.GetNewsItemByPerson(OrgPort.Model.UserInfo person, int count)
+        public IEnumerable<NewsItem> GetNewsItemByUser(User user, int count)
         {
-            throw new NotImplementedException();
+            return GetDbSet<NewsItem>().Where(n => n.Users.Contains(user)).Take(count);
         }
 
-        IEnumerable<OrgPort.Model.NewsItem> INewsItemRepository.GetNewsItemByDate(DateTime upToDate, TimeSpan period, int count)
+        public IEnumerable<NewsItem> GetNewsItemByDate(DateTime upToDate, TimeSpan period, int count)
         {
             throw new NotImplementedException();
         }

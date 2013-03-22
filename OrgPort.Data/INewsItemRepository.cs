@@ -14,7 +14,7 @@ namespace OrgPort.Data
         NewsItem GetNewsItemById(int id);
         IEnumerable<NewsItem> GetNewsItemList(int count);
         IEnumerable<NewsItem> GetNewsItemListByType(NewsItemType newsItemType, int count);
-        IEnumerable<NewsItem> GetNewsItemByPerson(UserInfo person, int count);
+        IEnumerable<NewsItem> GetNewsItemByUser(User person, int count);
         IEnumerable<NewsItem> GetNewsItemByDate(DateTime upToDate, TimeSpan period, int count);
     }
 }

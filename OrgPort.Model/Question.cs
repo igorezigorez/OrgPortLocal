@@ -8,8 +8,8 @@ namespace OrgPort.Model
     public class Question
     {
         public int Id { get; set; }
-        public UserInfo User { get; set; }
-        public UserInfo TargetUser { get; set; }
+        public int UserId { get; set; }
+        public int TargetUserId { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
         public DateTime Date { get; set; }

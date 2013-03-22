@@ -12,7 +12,7 @@ namespace OrgPort.Model
             Type = NewsItemType.NewsItem;
             Date = DateTime.UtcNow;
             TargetDate = DateTime.UtcNow;
-            Users = new List<UserInfo>();
+            Users = new List<User>();
             Tags = new List<Tag>();
         }
 
@@ -26,8 +26,8 @@ namespace OrgPort.Model
         public int Rating { get; set; }
         public DateTime Date { get; set; }
         public DateTime TargetDate { get; set; }
-        public IEnumerable<UserInfo> Users { get; set; }
-        public IEnumerable<Tag> Tags { get; set; }
+        public ICollection<User> Users { get; set; }
+        public ICollection<Tag> Tags { get; set; }
     }
 
     public enum NewsItemType
