@@ -175,6 +175,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DataSourceConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IRepositoryInitializer.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -200,7 +201,11 @@
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Models\UserInfoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnityDependencyResolver.cs" />
+    <Compile Include="UnityExtensions\HttpPerRequestLifetimeManager.cs" />
+    <Compile Include="UnityExtensions\IPerRequestStore.cs" />
+    <Compile Include="UnityExtensions\PerRequestLifetimeManager.cs" />
+    <Compile Include="UnityExtensions\HttpContextPerRequestStore.cs" />
+    <Compile Include="UnityExtensions\UnityDependencyResolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -313,6 +318,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="unity.config" />
+    <Content Include="unity.debug.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +334,16 @@
     <EmbeddedResource Include="Migrations\201303141121523_AddExtraUserInformation.resx">
       <DependentUpon>201303141121523_AddExtraUserInformation.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrgPort.Data\OrgPort.Data.csproj">
+      <Project>{7c113d1d-ea34-4f6c-b616-9adb9499a363}</Project>
+      <Name>OrgPort.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrgPort.DB\OrgPort.DB.csproj">
+      <Project>{1c32b6f5-0623-43d9-9498-112935007f05}</Project>
+      <Name>OrgPort.DB</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

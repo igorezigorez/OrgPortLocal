@@ -1,5 +1,6 @@
 ﻿using OrgPort.Data;
 using OrgPort.DB.Initializers;
+using OrgPort.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -35,7 +36,7 @@ namespace OrgPort.DB
 
         public void Initialize()
         {
-            
+            this.Context.Set<Tag>().ToList().Count();
         }
     }
 }

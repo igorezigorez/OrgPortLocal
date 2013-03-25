@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace OrgPort
+namespace OrgPort.UnityExtensions
 {
     public class UnityDependencyResolver:IDependencyResolver
     {
@@ -16,7 +16,7 @@ namespace OrgPort
             this.container = container;
         }
 
-        object IDependencyResolver.GetService(Type serviceType)
+        public object GetService(Type serviceType)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace OrgPort
             }
         }
 
-        IEnumerable<object> IDependencyResolver.GetServices(Type serviceType)
+        public IEnumerable<object> GetServices(Type serviceType)
         {
             try
             {

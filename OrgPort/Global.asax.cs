@@ -23,6 +23,9 @@ namespace OrgPort
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            UnityConfig.RegisterUnity();
+            DataSourceConfig.RegisterDataBase();
         }
     }
 }
