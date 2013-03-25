@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Practices.ServiceLocation;
+using OrgPort.Domain.Handlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,14 +8,28 @@ using System.Web.Mvc;
 
 namespace OrgPort.Controllers
 {
-    public class NewsController : Controller
+    public class NewsController : AuthorizedController
     {
+
+        public NewsController(IServiceLocator serviceLocator):base (serviceLocator)
+        {
+
+        }
+
         //
         // GET: /News/
 
         public ActionResult Index()
         {
             return View();
+        }
+
+        // GET: /News/List
+        public ActionResult List()
+        {
+            var newsList = Using<GetNewsItemList>().Execute(20, 0);
+
+            return View(newsList);
         }
 
         //
