@@ -24,22 +24,22 @@ namespace OrgPort.DB.Repository
             return GetDbSet<NewsItem>().Find(id);
         }
 
-        public IEnumerable<NewsItem> GetNewsItemList(int count)
+        public IEnumerable<NewsItem> GetNewsItemList(int count, int startIndex)
         {
-            return GetDbSet<NewsItem>().Take(count);
+            return GetDbSet<NewsItem>().Skip(startIndex).Take(count);
         }
 
-        public IEnumerable<NewsItem> GetNewsItemListByType(NewsItemType newsItemType, int count)
+        public IEnumerable<NewsItem> GetNewsItemListByType(NewsItemType newsItemType, int count, int startIndex)
         {
-            return GetDbSet<NewsItem>().Where(n => n.Type == newsItemType).Take(count);
+            return GetDbSet<NewsItem>().Where(n => n.Type == newsItemType).Skip(startIndex).Take(count);
         }
 
-        public IEnumerable<NewsItem> GetNewsItemByUser(User user, int count)
+        public IEnumerable<NewsItem> GetNewsItemByUser(User user, int count, int startIndex)
         {
-            return GetDbSet<NewsItem>().Where(n => n.Users.Contains(user)).Take(count);
+            return GetDbSet<NewsItem>().Where(n => n.Users.Contains(user)).Skip(startIndex).Take(count);
         }
 
-        public IEnumerable<NewsItem> GetNewsItemByDate(DateTime upToDate, TimeSpan period, int count)
+        public IEnumerable<NewsItem> GetNewsItemByDate(DateTime upToDate, TimeSpan period, int count, int startIndex)
         {
             throw new NotImplementedException();
         }

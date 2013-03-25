@@ -31,7 +31,7 @@ namespace OrgPort.DB
             modelBuilder.Entity<NewsItem>().Property(n => n.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<NewsItem>().Property(n => n.Text).IsRequired();
             modelBuilder.Entity<NewsItem>().Property(n => n.Title).IsRequired();
-            modelBuilder.Entity<NewsItem>().Property(n => n.Title).HasMaxLength(200);
+            modelBuilder.Entity<NewsItem>().Property(n => n.Title).HasMaxLength(Constants.TITLE_MAX_LENGTH);
             modelBuilder.Entity<NewsItem>().Property(n => n.Type).IsRequired();
             modelBuilder.Entity<NewsItem>().HasMany(n => n.Users);
             modelBuilder.Entity<NewsItem>().HasMany(n => n.Tags);
@@ -43,9 +43,9 @@ namespace OrgPort.DB
             modelBuilder.Entity<User>().Property(u => u.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<User>().Property(u => u.UserName).IsRequired();
             modelBuilder.Entity<User>().Property(u => u.Password).IsRequired();
-            modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(15);
+            modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(Constants.USERNAME_MAX_LENGTH);
             modelBuilder.Entity<User>().Property(u => u.AuthorizationId).IsRequired();
-            modelBuilder.Entity<User>().Property(u => u.AuthorizationId).HasMaxLength(255);
+            modelBuilder.Entity<User>().Property(u => u.AuthorizationId).HasMaxLength(Constants.TITLE_MAX_LENGTH);
             modelBuilder.Entity<User>().HasMany(u => u.RelatedUsers);
         }
 
@@ -63,7 +63,7 @@ namespace OrgPort.DB
             modelBuilder.Entity<Tag>().HasKey(t => t.Id);
             modelBuilder.Entity<Tag>().Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<Tag>().Property(t => t.Text).IsRequired();
-            modelBuilder.Entity<Tag>().Property(t => t.Text).HasMaxLength(40);
+            modelBuilder.Entity<Tag>().Property(t => t.Text).HasMaxLength(Constants.TAG_MAX_LENGTH);
         }
 
         private static void CreateQuestionsTable(DbModelBuilder modelBuilder)
@@ -74,7 +74,7 @@ namespace OrgPort.DB
             modelBuilder.Entity<Question>().Property(q => q.TargetUserId).IsRequired();
             modelBuilder.Entity<Question>().Property(q => q.Text).IsRequired();
             modelBuilder.Entity<Question>().Property(q => q.Title).IsRequired();
-            modelBuilder.Entity<Question>().Property(q => q.Title).HasMaxLength(200);
+            modelBuilder.Entity<Question>().Property(q => q.Title).HasMaxLength(Constants.TITLE_MAX_LENGTH);
         }
 
         public DbSet<User> Users { get; set; }

@@ -12,9 +12,9 @@ namespace OrgPort.Data
     {
         void CreateNewsItem(NewsItem newsItem);
         NewsItem GetNewsItemById(int id);
-        IEnumerable<NewsItem> GetNewsItemList(int count);
-        IEnumerable<NewsItem> GetNewsItemListByType(NewsItemType newsItemType, int count);
-        IEnumerable<NewsItem> GetNewsItemByUser(User person, int count);
-        IEnumerable<NewsItem> GetNewsItemByDate(DateTime upToDate, TimeSpan period, int count);
+        IEnumerable<NewsItem> GetNewsItemList(int count, int startIndex);
+        IEnumerable<NewsItem> GetNewsItemListByType(NewsItemType newsItemType, int count, int startIndex);
+        IEnumerable<NewsItem> GetNewsItemByUser(User person, int count, int startIndex);
+        IEnumerable<NewsItem> GetNewsItemByDate(DateTime upToDate, TimeSpan period, int count, int startIndex);
     }
 }

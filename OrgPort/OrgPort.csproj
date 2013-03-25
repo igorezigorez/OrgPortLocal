@@ -344,6 +344,10 @@
       <Project>{1c32b6f5-0623-43d9-9498-112935007f05}</Project>
       <Name>OrgPort.DB</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OrgPort.Domain\OrgPort.Domain.csproj">
+      <Project>{b00ca0fc-d065-41af-a700-8cc5155fce2a}</Project>
+      <Name>OrgPort.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
