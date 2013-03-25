@@ -18,18 +18,8 @@ namespace OrgPort.DB.Initializers
             }
             var replacedContext = ReplaceSqlCeConnection(context);
 
-            bool databaseExists;
-            using (new TransactionScope(TransactionScopeOption.Suppress))
+            if (replacedContext.Database.Exists())
             {
-                databaseExists = replacedContext.Database.Exists();
-            }
-            if (databaseExists)
-            {
-                if (context.Database.CompatibleWithModel(throwIfNoMetadata: true))
-                {
-                    return;
-                }
-
                 replacedContext.Database.Delete();
             }
 

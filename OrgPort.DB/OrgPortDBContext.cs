@@ -33,8 +33,8 @@ namespace OrgPort.DB
             modelBuilder.Entity<NewsItem>().Property(n => n.Title).IsRequired();
             modelBuilder.Entity<NewsItem>().Property(n => n.Title).HasMaxLength(Constants.TITLE_MAX_LENGTH);
             modelBuilder.Entity<NewsItem>().Property(n => n.Type).IsRequired();
-            modelBuilder.Entity<NewsItem>().HasMany(n => n.Users);
-            modelBuilder.Entity<NewsItem>().HasMany(n => n.Tags);
+            modelBuilder.Entity<NewsItem>().HasMany(n => n.Users).WithMany(u => u.NewsItems);
+            modelBuilder.Entity<NewsItem>().HasMany(n => n.Tags).WithMany(t=>t.NewsItems);
         }
 
         private static void CreateUsersTable(DbModelBuilder modelBuilder)
@@ -46,7 +46,8 @@ namespace OrgPort.DB
             modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(Constants.USERNAME_MAX_LENGTH);
             modelBuilder.Entity<User>().Property(u => u.AuthorizationId).IsRequired();
             modelBuilder.Entity<User>().Property(u => u.AuthorizationId).HasMaxLength(Constants.TITLE_MAX_LENGTH);
-            modelBuilder.Entity<User>().HasMany(u => u.RelatedUsers);
+            modelBuilder.Entity<User>().HasMany(u => u.RelatedUsers).WithMany();
+            modelBuilder.Entity<User>().HasMany(u => u.NewsItems).WithMany(n => n.Users);
         }
 
         private static void CreateCommentsTable(DbModelBuilder modelBuilder)
@@ -64,6 +65,7 @@ namespace OrgPort.DB
             modelBuilder.Entity<Tag>().Property(t => t.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<Tag>().Property(t => t.Text).IsRequired();
             modelBuilder.Entity<Tag>().Property(t => t.Text).HasMaxLength(Constants.TAG_MAX_LENGTH);
+            modelBuilder.Entity<Tag>().HasMany(u => u.NewsItems).WithMany(n => n.Tags);
         }
 
         private static void CreateQuestionsTable(DbModelBuilder modelBuilder)

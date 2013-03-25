@@ -11,7 +11,7 @@ namespace OrgPort.Model
         {
             Type = NewsItemType.NewsItem;
             Date = DateTime.UtcNow;
-            TargetDate = DateTime.UtcNow;
+            //TargetDate = DateTime.UtcNow;
             Users = new List<User>();
             Tags = new List<Tag>();
         }

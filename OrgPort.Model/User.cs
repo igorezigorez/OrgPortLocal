@@ -24,6 +24,7 @@ namespace OrgPort.Model
         public string Phone { get; set; }
         public ICollection<UserRole> Roles { get; set; }
         public ICollection<User> RelatedUsers { get; set; }
+        public ICollection<NewsItem> NewsItems { get; set; }
     }
 
     public enum UserRole

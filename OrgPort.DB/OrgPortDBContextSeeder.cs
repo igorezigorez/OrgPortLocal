@@ -74,6 +74,8 @@ namespace OrgPort.DB
         {
             var newsItem = new NewsItem { Date = date != null ? date : DateTime.UtcNow, Title = title, Text = text, SubTitle = subtitle, Users = users, Tags = tags, TargetDate = date != null ? date : DateTime.UtcNow.AddDays(2), Type = type };
             this.NewsItems.Add(newsItem);
+            //http://stackoverflow.com/questions/7795300/validation-failed-for-one-or-more-entities-see-entityvalidationerrors-propert
+            this.SaveChanges();
             return newsItem;
         }
 
