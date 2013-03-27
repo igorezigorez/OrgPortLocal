@@ -44,8 +44,8 @@ namespace OrgPort.DB
             modelBuilder.Entity<User>().Property(u => u.UserName).IsRequired();
             modelBuilder.Entity<User>().Property(u => u.Password).IsRequired();
             modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(Constants.USERNAME_MAX_LENGTH);
-            modelBuilder.Entity<User>().Property(u => u.AuthorizationId).IsRequired();
-            modelBuilder.Entity<User>().Property(u => u.AuthorizationId).HasMaxLength(Constants.TITLE_MAX_LENGTH);
+            //modelBuilder.Entity<User>().Property(u => u.AuthorizationId).IsRequired();
+            //modelBuilder.Entity<User>().Property(u => u.AuthorizationId).HasMaxLength(Constants.TITLE_MAX_LENGTH);
             modelBuilder.Entity<User>().HasMany(u => u.RelatedUsers).WithMany();
             modelBuilder.Entity<User>().HasMany(u => u.NewsItems).WithMany(n => n.Users);
         }

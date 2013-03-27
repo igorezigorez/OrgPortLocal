@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrgPort.Contracts", "OrgPor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrgPort.Domain", "OrgPort.Domain\OrgPort.Domain.csproj", "{B00CA0FC-D065-41AF-A700-8CC5155FCE2A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{AB0522BC-FF09-4B0A-9A4F-CE52D55271A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrgPort.DB.UnitTests", "OrgPort.DB.UnitTests\OrgPort.DB.UnitTests.csproj", "{077210A6-1E3F-43D0-B8BA-25176C8A3350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrgPort.ServicesModel.Test", "OrgPort.ServicesModel.Test\OrgPort.ServicesModel.Test.csproj", "{A31B367C-01B1-4CFE-8D57-9618CFA5615C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +59,14 @@ Global
 		{B00CA0FC-D065-41AF-A700-8CC5155FCE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B00CA0FC-D065-41AF-A700-8CC5155FCE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B00CA0FC-D065-41AF-A700-8CC5155FCE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{077210A6-1E3F-43D0-B8BA-25176C8A3350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{077210A6-1E3F-43D0-B8BA-25176C8A3350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{077210A6-1E3F-43D0-B8BA-25176C8A3350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{077210A6-1E3F-43D0-B8BA-25176C8A3350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A31B367C-01B1-4CFE-8D57-9618CFA5615C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A31B367C-01B1-4CFE-8D57-9618CFA5615C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A31B367C-01B1-4CFE-8D57-9618CFA5615C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A31B367C-01B1-4CFE-8D57-9618CFA5615C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +77,8 @@ Global
 		{1C32B6F5-0623-43D9-9498-112935007F05} = {00996F54-A0A8-470D-B2D3-361BAA4A8128}
 		{CD76E31B-38AA-4A70-976E-F54C02C9A78A} = {5CA0215B-5779-4F58-A9AA-B3D814E7961E}
 		{B00CA0FC-D065-41AF-A700-8CC5155FCE2A} = {5CA0215B-5779-4F58-A9AA-B3D814E7961E}
+		{077210A6-1E3F-43D0-B8BA-25176C8A3350} = {AB0522BC-FF09-4B0A-9A4F-CE52D55271A5}
+		{A31B367C-01B1-4CFE-8D57-9618CFA5615C} = {AB0522BC-FF09-4B0A-9A4F-CE52D55271A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35

@@ -1,6 +1,7 @@
 ﻿using OrgPort.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,13 +76,29 @@ namespace OrgPort.DB
             var newsItem = new NewsItem { Date = date != null ? date : DateTime.UtcNow, Title = title, Text = text, SubTitle = subtitle, Users = users, Tags = tags, TargetDate = date != null ? date : DateTime.UtcNow.AddDays(2), Type = type };
             this.NewsItems.Add(newsItem);
             //http://stackoverflow.com/questions/7795300/validation-failed-for-one-or-more-entities-see-entityvalidationerrors-propert
-            this.SaveChanges();
+            try
+            {
+                this.SaveChanges();
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var error in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        error.Entry.Entity.GetType().Name, error.Entry.State);
+                    foreach (var intError in error.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            intError.PropertyName, intError.ErrorMessage);
+                    }
+                }
+            }
             return newsItem;
         }
 
         private User SeedUser(string name, string password, string email = "common@orgport.com", string phone = "+210987654321", UserRole mainRole = UserRole.User)
         {
-            var user = new User { UserName = name, Email = email, Phone = phone, RegistrationDate = DateTime.UtcNow };
+            var user = new User { UserName = name, Email = email, Phone = phone, RegistrationDate = DateTime.UtcNow, Password = password };
             user.Roles.Add(mainRole);
             this.Users.Add(user);
             return user;
