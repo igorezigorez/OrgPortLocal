@@ -43,5 +43,40 @@ namespace OrgPort.DB.Repository
         {
             throw new NotImplementedException();
         }
+
+        void INewsItemRepository.CreateNewsItem(NewsItem newsItem)
+        {
+            throw new NotImplementedException();
+        }
+
+        NewsItem INewsItemRepository.GetNewsItemById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<NewsItem> INewsItemRepository.GetNewsItemList(int count, int startIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<NewsItem> INewsItemRepository.GetNewsItemListByType(NewsItemType newsItemType, int count, int startIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<NewsItem> INewsItemRepository.GetNewsItemListByTag(Tag tag, int count, int startIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<NewsItem> INewsItemRepository.GetNewsItemByUser(User person, int count, int startIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<NewsItem> INewsItemRepository.GetNewsItemByDate(DateTime upToDate, TimeSpan period, int count, int startIndex)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

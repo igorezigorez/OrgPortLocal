@@ -58,6 +58,7 @@
     <Compile Include="RepositoryInitializer.cs" />
     <Compile Include="Repository\BaseDBRepository.cs" />
     <Compile Include="Repository\NewsItemRepository.cs" />
+    <Compile Include="Repository\TagReository.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

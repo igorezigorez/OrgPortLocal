@@ -24,8 +24,8 @@ namespace OrgPort.DB
             this.unitOfWork = unitOfWork;
             Database.DefaultConnectionFactory = new SqlCeConnectionFactory("System.Data.SqlServerCe.4.0");
 
-            //Database.SetInitializer(new DropCreateAlwaysOrgPortDBInitializer<OrgPortDBContext>());
-            Database.SetInitializer(new DropCreateIfModelChangesOrgPortDBInitializer<OrgPortDBContext>());
+            Database.SetInitializer(new DropCreateAlwaysOrgPortDBInitializer<OrgPortDBContext>());
+            //Database.SetInitializer(new DropCreateIfModelChangesOrgPortDBInitializer<OrgPortDBContext>());
         }
 
 
